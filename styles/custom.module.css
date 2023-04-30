@@ -21,18 +21,48 @@
     gap: .8rem;
 }
 
-.formulario button{
+.formulario button {
     justify-self: center;
 }
-
-
-
-
-
 
 
 /* Registro*/
 .container_register{
     display: grid;
     place-content: center;
+}
+
+
+/* Home
+ */
+.container_home {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 1rem;
+}
+
+.home_sidebar {
+    /*height: calc(100vh - 5rem) ;*/
+    height: calc(100vh - 4rem);
+    width: 33%;
+    position: fixed;
+    z-index: 10; /* Stay on top */
+    display: grid;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    gap: 2rem;
+    border-right: 1px solid #E0E2EA;
+}
+
+.home_lyrics{
+    margin-left: 33%;
+}
+
+/* Navbar */
+.stickyTop{
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }

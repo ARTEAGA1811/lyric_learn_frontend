@@ -2,33 +2,35 @@ import {SongInterface} from "../../interfaces/song.interface";
 import {Badge, Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 
-const SongCard = ({title, artist, genres}: SongInterface) => {
-    const getColorBage = (genre: string) => {
-        switch (genre) {
-            case "rock":
-                return "primary";
-            case "indie":
-                return "secondary";
-            case "pop":
-                return "success";
-            case "kpop":
-                return "danger";
-            case "rap":
-                return "warning";
-            case "r&b":
-                return "info";
-            case "reggaeton":
-                return "light";
-            case "trap":
-                return "dark";
-            default:
-                return "primary";
-        }
+
+export const getColorBage = (genre: string) => {
+    switch (genre) {
+        case "rock":
+            return "primary";
+        case "indie":
+            return "secondary";
+        case "pop":
+            return "success";
+        case "kpop":
+            return "danger";
+        case "rap":
+            return "warning";
+        case "r&b":
+            return "info";
+        case "reggaeton":
+            return "light";
+        case "trap":
+            return "dark";
+        default:
+            return "primary";
     }
+}
+const SongCard = ({title, artist, genres}: SongInterface) => {
+
     return (
         <Card className={"mb-3"}>
-                <Card.Header className={"fw-bold"}>{title}</Card.Header>
             <Card.Body className={"d-flex flex-column"}>
+                <Card.Title className={"fw-bold"}>{title}</Card.Title>
                 <Card.Text>
                     {artist}
                     {" | "}

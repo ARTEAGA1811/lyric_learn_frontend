@@ -1,48 +1,37 @@
 import {useState} from "react";
 import Button from "react-bootstrap/Button";
 import {SongInterface} from "../../interfaces/song.interface";
-import {SongCard} from "./SongCard";
+import {SongCard} from "../music/SongCard";
 import {FooterM} from "../FooterM";
+import {fakeSong, fakeSong2} from "../../utils/sample-song";
 
-const MusicListContainer = () => {
+const Sidebar = () => {
     const [thereIsMusicList, setThereIsMusicList] = useState(true);
 
 
-    const fakeSong: SongInterface = {
-        title: "I was just a kid",
-        artist: "Nothing but thieves",
-        genres: ["rock", "indie"],
-    }
-    const fakeSong2: SongInterface = {
-        title: "Set me free",
-        artist: "Twice",
-        genres: ["kpop", "pop"],
-    }
+
 
     const listFakeSongs: SongInterface[] = [];
     listFakeSongs.push(fakeSong);
     listFakeSongs.push(fakeSong2);
+    listFakeSongs.push(fakeSong);
+    listFakeSongs.push(fakeSong2);
+    listFakeSongs.push(fakeSong);
+    listFakeSongs.push(fakeSong2);
 
-    listFakeSongs.push(fakeSong);
-    listFakeSongs.push(fakeSong2);
 
-    listFakeSongs.push(fakeSong);
-    listFakeSongs.push(fakeSong2);
-    listFakeSongs.push(fakeSong);
-    listFakeSongs.push(fakeSong2);
 
 
 
     if (thereIsMusicList) {
         return (
-            <div className={"overflow-auto justify-content-start" }>
+            <div className={"" }>
                 <h2 className={"text-center mb-4"}>Mi lista</h2>
                 {
                     listFakeSongs.map((song, index) => {
                         return <SongCard key={index} {...song}/>
                     })
                 }
-                <FooterM/>
             </div>
         )
     }
@@ -64,4 +53,4 @@ const MusicListContainer = () => {
     )
 }
 
-export {MusicListContainer};
+export {Sidebar};

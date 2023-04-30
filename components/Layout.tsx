@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Nav from "react-bootstrap/Nav";
 import {NavBarContainer} from "./navbar/NavBarContainer";
+import st from "../styles/custom.module.css";
 
 type Props = {
     children?: ReactNode
@@ -16,7 +17,7 @@ const Layout = ({children, title = 'This is the default title'}: Props) => (
             <meta charSet="utf-8"/>
             <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
         </Head>
-        <header>
+        <header className={st.stickyTop}>
             <NavBarContainer/>
         </header>
         {children}

@@ -10,8 +10,8 @@ import {Dropdown, DropdownButton} from "react-bootstrap";
 const NavBarContainer = () => {
     const expand = "sm";
     return (
-        <>
-            <Navbar bg="light" expand={expand} className="mb-3 px-3">
+        <div className={""}>
+            <Navbar bg="light" expand={expand} className="px-3">
                 <Container fluid>
                     <Navbar.Brand href="#">Lyrics Learning</Navbar.Brand>
                     <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`}/>
@@ -31,16 +31,16 @@ const NavBarContainer = () => {
                                 <Nav.Link href="#action2">Practicar</Nav.Link>
                             </Nav>
                             <DropdownButton id="dropdown-basic-button" title="Yo" drop={"start"}>
-                                <Dropdown.Item href="#/action-1">Mi perfil</Dropdown.Item>
+                                <Dropdown.Item href="#/profile">Mi perfil</Dropdown.Item>
                                 <Dropdown.Divider />
-                                <Dropdown.Item href="#/action-2">Salir</Dropdown.Item>
+                                <Dropdown.Item href="/login">Salir</Dropdown.Item>
                             </DropdownButton>
 
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>
                 </Container>
             </Navbar>
-        </>
+        </div>
     );
 }
 
